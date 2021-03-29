@@ -1,11 +1,14 @@
-import Layout from '../components/layout'
+import { LayoutContainer } from '../containers/layout'
 import 'bootstrap/dist/css/bootstrap.css'
-import '../styles/global.css'
+
+import { GlobalStyles } from '../styles/global'
 
 function App({ Component, pageProps }) {
-    return <Layout>
-        <Component {...pageProps} />
-    </Layout>
+    return <>
+        <GlobalStyles />
+        <LayoutContainer>
+            <Component {...pageProps} />
+        </LayoutContainer></>
 }
 
 export default App

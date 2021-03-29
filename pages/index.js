@@ -1,3 +1,3 @@
 export default function Home() {
-    return <div>Hola</div>
+    return <div style={{ height: '100vh' }}>Hola</div>
 }

@@ -148,44 +148,6 @@ export const HeaderRight = styled.div`
     margin-left: auto;
 `
 
-export const SearchInput = styled.input`
-    width: 450px;
-    height: 39px;
-    border: solid 1px #4a4a4a;
-    border-radius: 20px;
-    outline: none;
-    text-align: center;
-    font-size: 16px;
-    color: #2e2e2e;
-    font-weight: 300;
-    box-shadow: 0 0 1px 0px #4a4a4a inset, 0 0 1px 0px #4a4a4a;
-	transition: all 200ms ease;
-
-    &:focus,:hover{
-        border-color: #2fce98;
-        box-shadow: 0 0 1px 0px #2fce98 inset, 0 0 1px 0px #2fce98;
-    }
-
-    &::placeholder {
-        font-size: 16px !important;
-	    font-weight: 300 !important;
-	    color: #2e2e2e !important;
-    }
-
-    @media only screen and (max-width: 1780px) {
-        width: 310px;
-    }
-    @media only screen and (max-width: 1600px) {
-        width: 210px;
-    }
-    @media only screen and (max-width: 1440px) {
-        width: 300px;
-    }
-    @media only screen and (max-width: 991px) {
-        width: 210px;
-    }
-`
-
 export const HeaderSearchButton = styled.button`
     position: absolute;
     top: 50%;
@@ -248,6 +210,58 @@ export const User = styled.div`
     }
 `
 
-export const Cart = styled.div``
+export const Cart = styled.div`
+    margin-right: 29px;
 
-export const HeaderPhone = styled.div``
+    & a > div {
+        width: 37px;
+        height: 37px;
+    }
+
+    & a > div > svg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media only screen and (max-width: 1440px) {
+        & a > div {
+            width: 25px;
+		    height: 25px;
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        margin-right: 0;
+    }
+    @media only screen and (max-width: 575px) {
+        & a > div {
+            width: 24px;
+		    height: 24px;
+        }
+    }
+`
+
+export const HeaderPhone = styled.div`
+    & > div:first-child > div {
+        width: 36px;
+        height: 36px;
+    }
+
+    & > div:last-child {
+        font-size: 18px;
+        font-weight: 700;
+        color: #4a4a4a;
+        padding-left: 26px;
+    }
+    @media only screen and (max-width: 1440px) {
+        & > div:first-child > div {
+            width: 24px;
+		    height: 24px;
+        }
+        & > div:last-child {
+            font-size: 16px;
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        display: none !important;
+    }
+`

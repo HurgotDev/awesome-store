@@ -2,11 +2,11 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 
-import { Hamburger, Header, HeaderContent, HeaderOverlay, HeaderRight, HeaderSearch, Logo, MainNav, User } from './styled'
+import { Cart, Hamburger, Header, HeaderContent, HeaderOverlay, HeaderPhone, HeaderRight, Logo, MainNav, User } from './styled'
 import Search from './header-search'
 
-export default function header() {
-    return <Header /* active */ scrolled> {/* [active, scrolled] */}
+export default function header({ active, scrolled, handleMenu = () => undefined }) {
+    return <Header active={active} scrolled={scrolled}>
         <HeaderOverlay />
         <HeaderContent className='d-flex flex-row align-items-center justify-content-start'>
             <Logo>
@@ -14,12 +14,12 @@ export default function header() {
                     <a>
                         <div className='d-flex flex-row align-items-center justify-content-start'>
                             <div><img src='/images/logo_1.png' alt='' /></div>
-                            <div>Little closet</div>
+                            <div>Awesome Store</div>
                         </div>
                     </a>
                 </Link>
             </Logo>
-            <Hamburger><FontAwesomeIcon icon={faBars} /></Hamburger>
+            <Hamburger onClick={handleMenu}><FontAwesomeIcon icon={faBars} /></Hamburger>
             <MainNav>
                 <ul className='d-flex flex-row align-items-start justify-content-start'>
                     <li className='active'><Link href='/'><a>Women</a></Link></li>
@@ -30,9 +30,7 @@ export default function header() {
                 </ul>
             </MainNav>
             <HeaderRight className='d-flex flex-row align-items-center justify-content-start'>
-                <HeaderSearch>
-                    <Search />
-                </HeaderSearch>
+                <Search />
                 <User>
                     <Link href='/'>
                         <a>
@@ -43,6 +41,19 @@ export default function header() {
                         </a>
                     </Link>
                 </User>
+                <Cart>
+                    <Link href='/'>
+                        <a>
+                            <div>
+                                <img className='svg' src='/images/cart.svg' alt='https://www.flaticon.com/authors/freepik' />
+                            </div>
+                        </a>
+                    </Link>
+                </Cart>
+                <HeaderPhone className='d-flex flex-row align-items-center justify-content-center'>
+                    <div><div><img src='/images/phone.svg' alt='https://www.flaticon.com/authors/freepik' /></div></div>
+                    <div>+57 (301) 3587711</div>
+                </HeaderPhone>
             </HeaderRight>
         </HeaderContent>
     </Header>

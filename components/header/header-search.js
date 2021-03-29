@@ -1,4 +1,5 @@
-import { HeaderSearch, HeaderSearchButton, SearchInput } from './styled'
+import { HeaderSearch, HeaderSearchButton } from './styled'
+import { SearchInput } from '../relevant'
 
 export default function headerSearch() {
     return <HeaderSearch>
