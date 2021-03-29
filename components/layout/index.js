@@ -1,5 +1,8 @@
 import Head from 'next/head'
 
+import { SuperContainer } from '../relevant'
+import Header from '../header'
+
 export default function layout({ children }) {
     return <>
         <Head>
@@ -10,5 +13,9 @@ export default function layout({ children }) {
             <meta name='description' content='Awesome Store' />
             <meta name='viewport' content='width=device-width, initial-scale=1' />
         </Head>
+        <SuperContainer>
+            <Header />
+            {children}
+        </SuperContainer>
     </>
 }
