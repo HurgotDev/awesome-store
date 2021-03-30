@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { SuperContainer, SuperContainerInner, SuperOverlay } from '../relevant'
 import { HeaderContainer } from '../../containers/header'
 import Aside from '../aside'
+import { FooterComponent } from '../footer'
 
 export default function layout({ children, activeMenu, onActiveMenu = () => undefined }) {
     return <>
@@ -22,6 +23,7 @@ export default function layout({ children, activeMenu, onActiveMenu = () => unde
             <SuperContainerInner active={activeMenu}>
                 <SuperOverlay id='super_overlay'/>
                 {children}
+                <FooterComponent />
             </SuperContainerInner>
         </SuperContainer>
     </>
